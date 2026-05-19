@@ -51,6 +51,28 @@ The full experiment writes:
 
 Default settings live in `configs/experiment_config.yaml`. The scripts use fixed random seeds so outputs are reproducible.
 
+## JASA Reproducibility
+
+The JASA upgrade adds power analysis, alert-rule operating characteristics, an output verifier, a CI workflow, and optional public Adult dataset validation. See `README_JASA_UPGRADE.md` for the exact reproduction workflow.
+
+Regenerate the JASA outputs with:
+
+```bash
+python experiments/run_fairness_drift_experiment.py
+python experiments/run_jasa_operating_characteristics.py
+python scripts/verify_jasa_outputs.py
+```
+
+Additional JASA outputs include:
+
+- `results/tables/jasa_operating_characteristics.csv`
+- `results/tables/jasa_power_table.csv`
+- `results/figures/power_by_drift_magnitude.png`
+- `results/figures/false_alert_rate_by_rule.png`
+- `results/figures/mde_by_subgroup_size.png`
+
+The Adult public-data validation script is optional and is not required for CI or the default synthetic-only validation.
+
 ## Tests
 
 ```bash

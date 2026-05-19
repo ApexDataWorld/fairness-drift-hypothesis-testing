@@ -29,8 +29,9 @@ dist/
 .mypy_cache/
 results/.cache/
 results/.matplotlib/
+results/tables/public_adult_validation_NOT_RUN.txt
+data/public_cache/
 
 # Secrets/local env
 .env
 .envrc
-
